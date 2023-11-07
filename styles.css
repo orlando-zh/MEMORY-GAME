@@ -1,0 +1,135 @@
+body {
+   margin: 0;
+   background: rgb(63,94,251);
+   background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+   overflow: hidden;
+}
+
+/* Centra las cartas */
+#wrapper {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+}
+
+/* Ordena las cartas */
+#game {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   width: 650px;
+   justify-content: space-evenly;
+ }
+
+/* estilos de intentos */
+#stats {
+   color: white;
+   position: 1px;
+   text-align: right;
+   width: calc(99% - 3rem);
+   font-size: 3rem;
+   font-family: serif;
+}
+
+/* Estilos de las cartas */
+.card {
+   width: 100px;
+   height: 140px;
+   margin: 1rem;
+   position: relative;
+   transition: transform 0.5s;
+   transform-style: preserve-3d;
+}
+
+/* Efecto de giro*/
+.card.active {
+   transform: rotateY(180deg);
+}
+
+
+.card div {
+   width: 88%;
+   height: 100%;
+   border-radius: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   position: absolute;
+   backface-visibility: hidden;
+   pointer-events: none;
+}
+
+/* Estilo de la parte frontal de la carta */
+.card .face {
+   background: #05d1fe;
+   transform: rotateY( 180deg );
+   color: black;
+   font-size: 6rem;
+}
+
+/* Estilo de la parte trasera de la cartta */
+.card .back {
+   border: 3px solid #05d1fe;
+   background: url(IMG/back.png) center / contain no-repeat;
+}
+
+#reset {
+   background-color: #b034c8; /* Color de fondo del botón */
+   border: none; /* Sin bordes */
+   color: white; /* Color del texto */
+   padding: 15px 32px; /* Espaciado interno */
+   text-align: center; /* Alineación del texto */
+   text-decoration: none; /* Sin decoración en el texto */
+   display: inline-block;
+   font-size: 16px; /* Tamaño del texto */
+   margin: 4px 2px;
+   cursor: pointer; /* Cambia el cursor al pasar el ratón */
+   transition-duration: 0.4s; /* Duración de la transición */
+}
+
+#reset:hover {
+   background-color: rgb(80, 0, 86); /* Color de fondo del botón al pasar el ratón */
+   color: white; /* Color del texto al pasar el ratón */
+}
+
+
+
+
+/*Esta parte del codigo estiliza nuestra mensaje felicitación*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: rgb(103, 104, 138) ;
+  margin: auto;
+  padding: 20px;
+  border: 5px  #888;
+  width: 80%;
+  font-family: cursive;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
